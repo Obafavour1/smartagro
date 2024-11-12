@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities{
+  .maxcontainer{
+    @apply md:w-10/12 mx-auto px-5
+  }
+
+  .cards{
+    @apply px-12 py-8 grid gap-y-3 text-center bg-[#F6FAFD]/10 duration-500 rounded-2xl hover:bg-oranges-100 max-md:flex items-center gap-5 text-white hover:text-black
+  }
+  .heading3{
+    @apply text-[32px] text-white/90 font-semibold
+  }
+  .heading4{
+    @apply text-[14px] text-white/50
+  }
+
+  .inputstyle{
+    @apply rounded-[10px] outline-none  bg-greens-200/100 text-[14px] p-2
+  }
+}
