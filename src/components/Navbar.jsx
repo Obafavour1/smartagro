@@ -20,28 +20,30 @@ const clickOpen =()=>{
                     NavLink.map(link=>{
                         return(
                             <div>
-                                <p className='text-white/80 hover:text-white cursor-pointer'>{link.name}</p>
+                                <a href={link.Link}><p className='text-white/80 hover:text-white cursor-pointer'>{link.name}</p></a>
                             </div>
                         )
                     })
                 }
             </div>
             
-            <CiMenuFries className='text-white text-[25px]' />
+            <CiMenuFries onClick={()=>setOpen(!open)} className='text-white text-[25px]' />
         </div>
 
-        <div className='md:hidden z-10 fixed top-0 right-0 w-screen' onClick={()=>setOpen(!open)}>
-            <div className={`${open ? 'visible transition-all duration-100': 'invisible'} bg-greens-200 h-screen w-1/2 p-3 py-20 `}>
-                <div className='flex flex-col gap-10'>
-                    {
-                        NavLink.map(link=>{
-                            return(
-                                <div>
-                                    <p className='text-white/80 hover:text-white cursor-pointer'>{link.name}</p>
-                                </div>
-                            )
-                        })
-                    }
+        <div onClick={()=>setOpen(!open)}>
+            <div className='md:hidden z-10 fixed top-0 right-0 w-screen' >
+                <div className={`${open ? 'visible transition-all duration-100': 'invisible'} bg-greens-200 h-screen w-1/2 p-3 py-20 `}>
+                    <div className='flex flex-col gap-10 px-5'>
+                        {
+                            NavLink.map(link=>{
+                                return(
+                                    <div>
+                                        <a href={link.Link}><p className='text-white/80 hover:text-white cursor-pointer'>{link.name}</p></a>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
             </div>
         </div>
